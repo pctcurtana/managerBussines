@@ -37,7 +37,7 @@
         
                 <!-- User dropdown -->
                 <div class="flex justify-between w-full">
-                    <h1 class="text-xl font-semibold">Camera Shop Admin</h1>
+                    <h1 class="text-xl font-semibold">NgocNhi Camera Shop</h1>
                     
                     <div class="relative ml-3 flex items-center">
                         <span class="text-sm font-medium text-gray-700 mr-2">Xin chào, {{ Auth::user()->name }}</span>
