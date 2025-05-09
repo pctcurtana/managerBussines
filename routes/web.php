@@ -19,10 +19,12 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-// Auth routes
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Auth routes không sử dụng middleware VerifyCsrfToken
+Route::group(['middleware' => ['web', 'throttle:60,1']], function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post')->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+});
 
 // CSRF token route
 Route::get('/csrf-token', function (Request $request) {

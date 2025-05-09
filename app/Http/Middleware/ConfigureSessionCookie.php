@@ -24,14 +24,17 @@ class ConfigureSessionCookie
             // Remove port number if present
             $domain = preg_replace('/:\d+$/', '', $host);
             
-            // Set domain for cookies
-            Config::set('session.domain', '.' . $domain);
+            // Set domain for cookies - without leading dot to fix issues
+            Config::set('session.domain', $domain);
             
-            // Set SameSite attribute to None for cross-domain requests
-            Config::set('session.same_site', 'none');
+            // Set SameSite attribute to lax for better compatibility
+            Config::set('session.same_site', 'lax');
             
             // Force secure cookies on production
             Config::set('session.secure', true);
+            
+            // Set longer session lifetime
+            Config::set('session.lifetime', 1440); // 24 hours
         }
         
         return $next($request);
