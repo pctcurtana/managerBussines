@@ -13,9 +13,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let token = document.head.querySelector('meta[name="csrf-token"]');
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    // Also set for jQuery if using it
+    if (window.jQuery) {
+        window.jQuery.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': token.content
+            }
+        });
+    }
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
+// Add axios request interceptor to include the XSRF-TOKEN cookie in the X-XSRF-TOKEN header
+axios.interceptors.request.use(function (config) {
+    // Get the XSRF-TOKEN cookie
+    const xsrfToken = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('XSRF-TOKEN='))
+        ?.split('=')[1];
+        
+    if (xsrfToken) {
+        config.headers['X-XSRF-TOKEN'] = decodeURIComponent(xsrfToken);
+    }
+    
+    return config;
+});
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

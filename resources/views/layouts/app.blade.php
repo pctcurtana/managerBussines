@@ -13,6 +13,38 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <script>
+        // Auto refresh CSRF token to avoid 419 errors
+        function refreshCSRFToken() {
+            fetch('/csrf-token')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('meta[name="csrf-token"]').setAttribute('content', data.token);
+                    if (window.axios) {
+                        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = data.token;
+                    }
+                })
+                .catch(error => console.error('Error refreshing CSRF token:', error));
+        }
+        
+        // Refresh token every 30 minutes
+        setInterval(refreshCSRFToken, 30 * 60 * 1000);
+        
+        // Also refresh on page interaction after inactivity
+        let activityTimer;
+        function resetActivityTimer() {
+            clearTimeout(activityTimer);
+            activityTimer = setTimeout(refreshCSRFToken, 10 * 60 * 1000); // 10 minutes
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            ['click', 'keypress', 'scroll', 'mousemove'].forEach(function(event) {
+                document.addEventListener(event, resetActivityTimer);
+            });
+            resetActivityTimer();
+        });
+    </script>
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
