@@ -5,16 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\CameraOrder;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class CameraOrderController extends Controller
 {
+    // Số lượng đơn hàng tối đa trả về
+    protected $maxOrdersLimit = 100;
+
     /**
-     * Hiển thị danh sách đơn hàng
+     * Hiển thị danh sách đơn hàng, giới hạn số lượng
      */
     public function index()
     {
-        $orders = CameraOrder::orderBy('order_date', 'desc')->get();
+        $orders = CameraOrder::orderBy('order_date', 'desc')
+            ->limit($this->maxOrdersLimit)
+            ->get();
         return response()->json($orders);
+    }
+
+    /**
+     * Hiển thị thông tin một đơn hàng
+     */
+    public function show($id)
+    {
+        $order = CameraOrder::findOrFail($id);
+        return response()->json($order);
     }
 
     /**
@@ -96,10 +111,18 @@ class CameraOrderController extends Controller
     }
 
     /**
-     * Lấy thống kê
+     * Lấy thống kê - tối ưu bằng caching
      */
     public function getStats()
     {
+        // Sử dụng cache để lưu thống kê trong 5 phút
+        $cacheKey = 'camera_order_stats';
+        $cacheDuration = 300; // 5 phút
+        
+        if (Cache::has($cacheKey)) {
+            return response()->json(Cache::get($cacheKey));
+        }
+        
         // Chỉ tính doanh thu và lợi nhuận cho đơn hàng đã bán được
         $totalRevenue = CameraOrder::where('is_sold', true)->sum('selling_price');
         $totalProfit = CameraOrder::where('is_sold', true)->sum('profit');
@@ -115,18 +138,23 @@ class CameraOrderController extends Controller
             ->where('is_sold', true)
             ->sum('selling_price');
             
-        return response()->json([
+        $stats = [
             'total_revenue' => $totalRevenue,
             'total_profit' => $totalProfit,
             'monthly_revenue' => $monthlyRevenue,
             'total_orders' => $totalOrders,
             'sold_orders' => $soldOrders,
             'unsold_orders' => $unsoldOrders
-        ]);
+        ];
+        
+        // Lưu kết quả vào cache
+        Cache::put($cacheKey, $stats, $cacheDuration);
+            
+        return response()->json($stats);
     }
     
     /**
-     * Tìm kiếm đơn hàng
+     * Tìm kiếm đơn hàng - tối ưu số lượng kết quả
      */
     public function search(Request $request)
     {
@@ -152,7 +180,9 @@ class CameraOrderController extends Controller
             }
         }
         
-        $orders = $query->orderBy('order_date', 'desc')->get();
+        $orders = $query->orderBy('order_date', 'desc')
+            ->limit($this->maxOrdersLimit)
+            ->get();
             
         return response()->json($orders);
     }
@@ -165,6 +195,9 @@ class CameraOrderController extends Controller
         $order = CameraOrder::findOrFail($id);
         $order->is_sold = !$order->is_sold;
         $order->save();
+        
+        // Xóa cache thống kê để cập nhật lại
+        Cache::forget('camera_order_stats');
         
         return response()->json([
             'message' => $order->is_sold ? 'Đã đánh dấu là đã bán' : 'Đã đánh dấu là chưa bán',
