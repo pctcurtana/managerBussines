@@ -24,18 +24,19 @@
                     if (window.axios) {
                         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = data.token;
                     }
+                    console.log('CSRF token refreshed successfully');
                 })
                 .catch(error => console.error('Error refreshing CSRF token:', error));
         }
         
-        // Refresh token every 30 minutes
-        setInterval(refreshCSRFToken, 30 * 60 * 1000);
+        // Refresh token every 12 hours
+        setInterval(refreshCSRFToken, 12 * 60 * 60 * 1000);
         
         // Also refresh on page interaction after inactivity
         let activityTimer;
         function resetActivityTimer() {
             clearTimeout(activityTimer);
-            activityTimer = setTimeout(refreshCSRFToken, 10 * 60 * 1000); // 10 minutes
+            activityTimer = setTimeout(refreshCSRFToken, 6 * 60 * 60 * 1000); // 6 hours
         }
         
         document.addEventListener('DOMContentLoaded', function() {

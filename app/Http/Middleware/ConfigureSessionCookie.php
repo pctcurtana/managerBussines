@@ -33,9 +33,12 @@ class ConfigureSessionCookie
             // Force secure cookies on production
             Config::set('session.secure', true);
             
-            // Set longer session lifetime
-            Config::set('session.lifetime', 1440); // 24 hours
+            // Set longer session lifetime - 30 days
+            Config::set('session.lifetime', 43200); // 30 days (43200 minutes)
         }
+
+        // Tăng thời gian sống của cookie
+        Config::set('session.expire_on_close', false);
         
         return $next($request);
     }

@@ -18,9 +18,21 @@ class RefreshCsrfToken
     {
         $response = $next($request);
 
-        // Regenerate CSRF token for every request
-        if (Session::has('_token')) {
+        // Chỉ regenerate token khi không có sẵn hoặc session đang được khởi tạo mới
+        if (!Session::has('_token') || !Session::has('last_token_refresh')) {
             Session::regenerateToken();
+            // Set thời gian refresh token gần nhất
+            Session::put('last_token_refresh', now()->timestamp);
+        } else {
+            // Kiểm tra thời gian từ lần refresh token gần nhất
+            // Nếu đã hơn 12 giờ, refresh token
+            $lastRefresh = Session::get('last_token_refresh');
+            $hoursSinceRefresh = (now()->timestamp - $lastRefresh) / 3600;
+            
+            if ($hoursSinceRefresh > 12) {
+                Session::regenerateToken();
+                Session::put('last_token_refresh', now()->timestamp);
+            }
         }
 
         return $response;

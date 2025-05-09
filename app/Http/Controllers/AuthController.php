@@ -19,8 +19,10 @@ class AuthController extends Controller
             return redirect('/admin/dashboard');
         }
         
-        // Force a new token for login form
-        Session::regenerateToken();
+        // Đảm bảo token có sẵn cho form login
+        if (!Session::has('_token')) {
+            Session::regenerateToken();
+        }
         
         return view('auth.login');
     }
@@ -30,9 +32,6 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        // Skip CSRF validation for login
-        $this->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
-        
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -46,7 +45,6 @@ class AuthController extends Controller
         if ($user) {
             Auth::login($user);
             $request->session()->regenerate();
-            Session::regenerateToken();
             return redirect()->intended('/admin/dashboard');
         }
 
@@ -60,9 +58,6 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        // Skip CSRF validation for logout
-        $this->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
-        
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

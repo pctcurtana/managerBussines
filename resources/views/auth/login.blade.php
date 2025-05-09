@@ -36,8 +36,7 @@
             @endif
             
             <form method="POST" action="{{ route('login.post') }}" class="space-y-6">
-                {{-- Không sử dụng CSRF token trong form này --}}
-                {{-- @csrf --}}
+                @csrf
                 
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>

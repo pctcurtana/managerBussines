@@ -12,7 +12,11 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        // Tạm thời disable CSRF verification cho tất cả routes
-        '*'
+        // Các routes loại trừ CSRF verification
+        'api/*',
+        'webhook/*',
+        // Tạm thời loại trừ các routes login/logout
+        'login',
+        'logout'
     ];
 }

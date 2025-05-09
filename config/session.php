@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
+    'lifetime' => env('SESSION_LIFETIME', 10080),
 
     'expire_on_close' => false,
 
@@ -168,7 +168,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -197,5 +197,14 @@ return [
     */
 
     'same_site' => 'lax',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Extra Security Options
+    |--------------------------------------------------------------------------
+    */
+
+    // Tăng cường bảo mật
+    'http_only' => true,
 
 ];
