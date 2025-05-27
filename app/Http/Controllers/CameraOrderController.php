@@ -20,7 +20,10 @@ class CameraOrderController extends Controller
         $orders = CameraOrder::orderBy('order_date', 'desc')
             ->limit($this->maxOrdersLimit)
             ->get();
-        return response()->json($orders);
+        return response()->json($orders)
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
     }
 
     /**
@@ -111,17 +114,11 @@ class CameraOrderController extends Controller
     }
 
     /**
-     * Lấy thống kê - tối ưu bằng caching
+     * Lấy thống kê - REAL TIME không cache
      */
     public function getStats()
     {
-        // Sử dụng cache để lưu thống kê trong 5 phút
-        $cacheKey = 'camera_order_stats';
-        $cacheDuration = 300; // 5 phút
-        
-        if (Cache::has($cacheKey)) {
-            return response()->json(Cache::get($cacheKey));
-        }
+        // LOẠI BỎ HOÀN TOÀN CACHE để có real-time data
         
         // Chỉ tính doanh thu và lợi nhuận cho đơn hàng đã bán được
         $totalRevenue = CameraOrder::where('is_sold', true)->sum('selling_price');
@@ -147,10 +144,11 @@ class CameraOrderController extends Controller
             'unsold_orders' => $unsoldOrders
         ];
         
-        // Lưu kết quả vào cache
-        Cache::put($cacheKey, $stats, $cacheDuration);
-            
-        return response()->json($stats);
+        // KHÔNG cache - trả về ngay lập tức với headers no-cache   
+        return response()->json($stats)
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
     }
     
     /**
@@ -184,7 +182,10 @@ class CameraOrderController extends Controller
             ->limit($this->maxOrdersLimit)
             ->get();
             
-        return response()->json($orders);
+        return response()->json($orders)
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
     }
     
     /**
@@ -196,8 +197,7 @@ class CameraOrderController extends Controller
         $order->is_sold = !$order->is_sold;
         $order->save();
         
-        // Xóa cache thống kê để cập nhật lại
-        Cache::forget('camera_order_stats');
+        // Không cần xóa cache vì không còn cache
         
         return response()->json([
             'message' => $order->is_sold ? 'Đã đánh dấu là đã bán' : 'Đã đánh dấu là chưa bán',

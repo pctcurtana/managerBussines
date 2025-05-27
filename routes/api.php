@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route cho Camera Shop
-// Áp dụng cache middleware cho các route GET - giữ cache trong 5 phút (300 giây)
-Route::middleware('cache.headers:public;max_age=300;etag')->group(function () {
+// LOẠI BỎ cache middleware để cập nhật real-time
+Route::group([], function () {
     Route::get('/camera-orders', [CameraOrderController::class, 'index']);
     Route::get('/camera-orders/{id}', [CameraOrderController::class, 'show']);
     Route::get('/stats', [CameraOrderController::class, 'getStats']);

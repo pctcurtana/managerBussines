@@ -37,9 +37,11 @@ axios.interceptors.request.use(function (config) {
         config.headers['X-XSRF-TOKEN'] = decodeURIComponent(xsrfToken);
     }
 
-    // Cache GET requests in browser for better performance
+    // TẮT cache cho real-time data
     if (config.method === 'get') {
-        config.headers['Cache-Control'] = 'max-age=300'; // Cache for 5 minutes
+        config.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+        config.headers['Pragma'] = 'no-cache';
+        config.headers['Expires'] = '0';
     }
     
     return config;
@@ -64,7 +66,7 @@ const requestCache = {
         return null;
     },
     
-    set(key, value, ttl = 300000) { // Default TTL: 5 minutes (300000ms)
+    set(key, value, ttl = 0) { // TẮT cache localStorage
         const data = {
             value,
             expiry: Date.now() + ttl
@@ -85,40 +87,15 @@ const requestCache = {
     }
 };
 
-// Add response interceptor to cache GET responses
+// DISABLE response caching cho real-time data
 axios.interceptors.response.use(response => {
-    if (response.config.method === 'get' && response.status === 200 && !response.config.noCache) {
-        const cacheKey = `${response.config.url}_${JSON.stringify(response.config.params || {})}`;
-        requestCache.set(cacheKey, response.data);
-    }
+    // TẮT hoàn toàn cache
     return response;
 });
 
-// Add request interceptor to check cache before making GET requests
+// DISABLE request caching cho real-time data
 axios.interceptors.request.use(async config => {
-    if (config.method === 'get' && !config.noCache) {
-        const cacheKey = `${config.url}_${JSON.stringify(config.params || {})}`;
-        const cachedData = await requestCache.get(cacheKey);
-        
-        if (cachedData) {
-            // Cancel the axios request and return cached data
-            const source = axios.CancelToken.source();
-            config.cancelToken = source.token;
-            setTimeout(() => {
-                source.cancel('Request cancelled by cache hit');
-            }, 0);
-            
-            // Create a response-like object from the cached data
-            return Promise.resolve({
-                status: 200,
-                statusText: 'OK (cached)',
-                headers: {},
-                data: cachedData,
-                cached: true,
-                config
-            });
-        }
-    }
+    // TẮT hoàn toàn check cache - luôn fetch mới
     return config;
 });
 
