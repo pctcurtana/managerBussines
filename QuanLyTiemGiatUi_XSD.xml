@@ -1,0 +1,447 @@
+<QuanLyTiemGiatUi
+
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="QuanLyTiemGiatUi.xsd">
+
+  <DanhSachKhachHang>
+    <KHACH_HANG ma_khach_hang="KH001">
+      <ho_ten>Nguyễn Thu Trang</ho_ten>
+      <so_dien_thoai>0901234567</so_dien_thoai>
+      <email>thutrang.ng@email.com</email>
+      <dia_chi>123 Đường ABC, Quận Ninh Kiều, Cần Thơ</dia_chi>
+      <ghi_chu></ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH002">
+      <ho_ten>Trần Minh Hoàng</ho_ten>
+      <so_dien_thoai>0987654321</so_dien_thoai>
+      <email>minhhoang.tran@email.com</email>
+      <dia_chi>456 Đường XYZ, Quận Bình Thủy, Cần Thơ</dia_chi>
+      <ghi_chu></ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH003">
+      <ho_ten>Nguyễn Thị Thu Hương</ho_ten>
+      <so_dien_thoai>0901234567</so_dien_thoai>
+      <email>thuhuong.nguyen@email.com</email>
+      <dia_chi>789 Phố ABC, Quận Ninh Kiều, Cần Thơ</dia_chi>
+      <ghi_chu>Khách hàng khó tính</ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH004">
+      <ho_ten>Lê Văn Tuấn</ho_ten>
+      <so_dien_thoai>0778899001</so_dien_thoai>
+      <email>levantuan@email.com</email>
+      <dia_chi>101 Đại lộ MNP, Huyện Phong Điền, Cần Thơ</dia_chi>
+      <ghi_chu></ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH005">
+      <ho_ten>Phạm Thanh Xuân</ho_ten>
+      <so_dien_thoai>0394567890</so_dien_thoai>
+      <email>thanhxuan.pham@email.com</email>
+      <dia_chi>202 Ngõ QRS, Quận Cái Răng, Cần Thơ</dia_chi>
+      <ghi_chu>Đã giặt hơn 10 lần</ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH006">
+      <ho_ten>Võ Minh Đức</ho_ten>
+      <so_dien_thoai>0868112233</so_dien_thoai>
+      <email>minhduc.vo@email.com</email>
+      <dia_chi>303 Đường DEF, Huyện Thốt Nốt, Cần Thơ</dia_chi>
+      <ghi_chu></ghi_chu>
+    </KHACH_HANG>
+    <KHACH_HANG ma_khach_hang="KH007">
+      <ho_ten>Đặng Thị Ngọc Yến</ho_ten>
+      <so_dien_thoai>0912345678</so_dien_thoai>
+      <email>ngocyen.dang@email.com</email>
+      <dia_chi>505 Phố GHI, Quận Ô Môn, Cần Thơ</dia_chi>
+      <ghi_chu></ghi_chu>
+    </KHACH_HANG>
+  </DanhSachKhachHang>
+
+  <DanhSachNhanVien>
+    <NHAN_VIEN ma_nhan_vien="NV01">
+      <ho_ten>Lê Thị Mai</ho_ten>
+      <so_dien_thoai>0123456789</so_dien_thoai>
+      <email>thimai.le@email.com</email>
+      <dia_chi>789 Đường LMN, Quận Cái Răng, Cần Thơ</dia_chi>
+      <luong>7500000</luong>
+      <ngay_vao_lam>2023-03-20</ngay_vao_lam>
+      <vi_tri>Nhân viên giặt ủi</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV02">
+      <ho_ten>Phạm Văn Tuấn</ho_ten>
+      <so_dien_thoai>0912345678</so_dien_thoai>
+      <email>vantuan.pham@email.com</email>
+      <dia_chi>101 Đường OPQ, Quận Ô Môn, Cần Thơ</dia_chi>
+      <luong>8000000</luong>
+      <ngay_vao_lam>2022-10-15</ngay_vao_lam>
+      <vi_tri>Nhân viên giao nhận</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV03">
+      <ho_ten>Trần Thị Bích Ngọc</ho_ten>
+      <so_dien_thoai>0905556677</so_dien_thoai>
+      <email>bichngoc.tran@email.com</email>
+      <dia_chi>202 Phố RST, Quận Cái Răng, Cần Thơ</dia_chi>
+      <luong>15000000</luong>
+      <ngay_vao_lam>2020-05-20</ngay_vao_lam>
+      <vi_tri>Nhân viên giặt ủi</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV04">
+      <ho_ten>Lê Minh Hùng</ho_ten>
+      <so_dien_thoai>0779988776</so_dien_thoai>
+      <email>minhhung.le@email.com</email>
+      <dia_chi>303 Hẻm UVW, Quận Ninh Kiều, Cần Thơ</dia_chi>
+      <luong>10000000</luong>
+      <ngay_vao_lam>2023-01-10</ngay_vao_lam>
+      <vi_tri>Nhân viên giặt ủi</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV05">
+      <ho_ten>Nguyễn Hoàng Anh</ho_ten>
+      <so_dien_thoai>0381234567</so_dien_thoai>
+      <email>hoanganh.nguyen@email.com</email>
+      <dia_chi>404 Đường XYZ, Huyện Phong Điền, Cần Thơ</dia_chi>
+      <luong>7500000</luong>
+      <ngay_vao_lam>2024-03-01</ngay_vao_lam>
+      <vi_tri>Nhân viên giặt ủi</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV06">
+      <ho_ten>Đỗ Thị Mai Hương</ho_ten>
+      <so_dien_thoai>0945678901</so_dien_thoai>
+      <email>maihuong.do@email.com</email>
+      <dia_chi>505 Đại lộ ABC, Huyện Thốt Nốt, Cần Thơ</dia_chi>
+      <luong>9500000</luong>
+      <ngay_vao_lam>2021-11-25</ngay_vao_lam>
+      <vi_tri>Nhân viên giao nhận</vi_tri>
+    </NHAN_VIEN>
+    <NHAN_VIEN ma_nhan_vien="NV07">
+      <ho_ten>Võ Thanh Sang</ho_ten>
+      <so_dien_thoai>0890123456</so_dien_thoai>
+      <email>thanhsang.vo@email.com</email>
+      <dia_chi>606 Phố DEF, Quận Bình Thủy, Cần Thơ</dia_chi>
+      <luong>12000000</luong>
+      <ngay_vao_lam>2019-08-01</ngay_vao_lam>
+      <vi_tri>Nhân viên giao nhận</vi_tri>
+    </NHAN_VIEN>
+
+  </DanhSachNhanVien>
+
+  <DanhSachKhuyenMai>
+    <KHUYEN_MAI ma_khuyen_mai="KM01">
+      <mo_ta_khuyen_mai>Giảm 20k cho đơn hàng giặt sấy trên 200,000</mo_ta_khuyen_mai>
+      <so_tien_giam>20000</so_tien_giam>
+      <tien_don_hang_toi_thieu>200000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-10-01</ngay_bat_dau>
+      <ngay_ket_thuc>2025-10-31</ngay_ket_thuc>
+    </KHUYEN_MAI>
+    <KHUYEN_MAI ma_khuyen_mai="KM02">
+      <mo_ta_khuyen_mai>Giảm 35k cho đơn hàng giặt hấp trên 500,000</mo_ta_khuyen_mai>
+      <so_tien_giam>35000</so_tien_giam>
+      <tien_don_hang_toi_thieu>500000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-09-15</ngay_bat_dau>
+      <ngay_ket_thuc>2025-10-15</ngay_ket_thuc>
+    </KHUYEN_MAI>
+    <KHUYEN_MAI ma_khuyen_mai="KM03">
+      <mo_ta_khuyen_mai>Giảm 10k cho đơn hàng giặt sấy trên 100,000</mo_ta_khuyen_mai>
+      <so_tien_giam>10000</so_tien_giam>
+      <tien_don_hang_toi_thieu>100000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-10-05</ngay_bat_dau>
+      <ngay_ket_thuc>2025-10-20</ngay_ket_thuc>
+    </KHUYEN_MAI>
+    <KHUYEN_MAI ma_khuyen_mai="KM04">
+      <mo_ta_khuyen_mai>Giảm 50k cho đơn hàng giặt hấp trên 1,000,000</mo_ta_khuyen_mai>
+      <so_tien_giam>50000</so_tien_giam>
+      <tien_don_hang_toi_thieu>1000000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-10-10</ngay_bat_dau>
+      <ngay_ket_thuc>2025-11-10</ngay_ket_thuc>
+    </KHUYEN_MAI>
+    <KHUYEN_MAI ma_khuyen_mai="KM06">
+      <mo_ta_khuyen_mai>Giảm 5k cho đơn hàng giặt hấp trên 60,000</mo_ta_khuyen_mai>
+      <so_tien_giam>5000</so_tien_giam>
+      <tien_don_hang_toi_thieu>60000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-10-14</ngay_bat_dau>
+      <ngay_ket_thuc>2025-10-10</ngay_ket_thuc>
+    </KHUYEN_MAI>
+    <KHUYEN_MAI ma_khuyen_mai="KM07">
+      <mo_ta_khuyen_mai>Giảm 4k cho đơn hàng giặt hấp trên 50,000</mo_ta_khuyen_mai>
+      <so_tien_giam>4000</so_tien_giam>
+      <tien_don_hang_toi_thieu>50000</tien_don_hang_toi_thieu>
+      <ngay_bat_dau>2025-10-10</ngay_bat_dau>
+      <ngay_ket_thuc>2025-11-15</ngay_ket_thuc>
+    </KHUYEN_MAI>
+
+  </DanhSachKhuyenMai>
+  
+  <DanhSachLoaiDo>
+    <LOAI_DO ma_loai_do="LD01">
+      <ten_loai_do>Quần áo thông thường</ten_loai_do>
+      <mo_ta_loai_do>Cotton, Jean, Kaki</mo_ta_loai_do>
+      <he_so_gia>1.0</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD02">
+      <ten_loai_do>Chăn, Màn, Ga giường</ten_loai_do>
+      <mo_ta_loai_do>Đồ dùng gia đình kích thước lớn</mo_ta_loai_do>
+      <he_so_gia>1.2</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD03">
+      <ten_loai_do>Đồ len, dạ, lông</ten_loai_do>
+      <mo_ta_loai_do>Đồ dễ co rút, biến dạng</mo_ta_loai_do>
+      <he_so_gia>1.5</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD04">
+      <ten_loai_do>Đồ lụa, tơ tằm</ten_loai_do>
+      <mo_ta_loai_do>Đồ mỏng, dễ rách</mo_ta_loai_do>
+      <he_so_gia>2.0</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD05">
+      <ten_loai_do>Đồ vest, comple</ten_loai_do>
+      <mo_ta_loai_do>Đồ công sở, cần giặt hấp</mo_ta_loai_do>
+      <he_so_gia>2.5</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD06">
+      <ten_loai_do>Thảm, rèm cửa</ten_loai_do>
+      <mo_ta_loai_do>Đồ dùng gia đình kích thước lớn</mo_ta_loai_do>
+      <he_so_gia>3.0</he_so_gia>
+    </LOAI_DO>
+    <LOAI_DO ma_loai_do="LD07">
+      <ten_loai_do>Đồ em bé</ten_loai_do>
+      <mo_ta_loai_do>Đồ dùng cho trẻ sơ sinh và trẻ nhỏ</mo_ta_loai_do>
+      <he_so_gia>2.2</he_so_gia>
+    </LOAI_DO>
+
+    </DanhSachLoaiDo>
+
+    <DanhSachDichVu>
+      <DICH_VU ma_dich_vu="DV01">
+        <ten_dich_vu>Giặt sấy</ten_dich_vu>
+        <mo_ta_dich_vu>Giặt bằng máy và sấy khô</mo_ta_dich_vu>
+        <gia_dich_vu>25000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV02">
+        <ten_dich_vu>Giặt hấp (Giặt khô)</ten_dich_vu>
+        <mo_ta_dich_vu>Làm sạch bằng dung môi, dành cho đồ vest, lụa</mo_ta_dich_vu>
+        <gia_dich_vu>70000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV03">
+        <ten_dich_vu>Ủi đồ</ten_dich_vu>
+        <mo_ta_dich_vu>Ủi phẳng, làm mới quần áo</mo_ta_dich_vu>
+        <gia_dich_vu>15000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV04">
+        <ten_dich_vu>Gấp đồ cuộn tròn</ten_dich_vu>
+        <mo_ta_dich_vu>Gấp đồ theo kiểu cuộn tròn không gây nhăn</mo_ta_dich_vu>
+        <gia_dich_vu>10000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV05">
+        <ten_dich_vu>Xã vãi Comfort</ten_dich_vu>
+        <mo_ta_dich_vu>Xã đồ với nước xã vãi hương Comfort</mo_ta_dich_vu>
+        <gia_dich_vu>30000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV06">
+        <ten_dich_vu>Phơi đồ dưới ánh nắng</ten_dich_vu>
+        <mo_ta_dich_vu>Phơi đồ ướt dưới ánh nắng mặt trời</mo_ta_dich_vu>
+        <gia_dich_vu>10000</gia_dich_vu>
+      </DICH_VU>
+      <DICH_VU ma_dich_vu="DV07">
+        <ten_dich_vu>Phơi đồ trong nhà</ten_dich_vu>
+        <mo_ta_dich_vu>Phơi đồ ướt trong nhà với quạt công nghiệp</mo_ta_dich_vu>
+        <gia_dich_vu>5000</gia_dich_vu>
+      </DICH_VU>
+  </DanhSachDichVu>
+
+  <DanhSachDonHang>
+    <DON_HANG ma_don_hang="DH001" ma_khach_hang_dat="KH001" ma_nhan_vien_nhan="NV01" ma_khuyen_mai_ap_dung="KM01">
+      <ngay_nhan_don>2025-10-07T10:00:00</ngay_nhan_don>
+      <tong_tien>116875</tong_tien>
+      <trang_thai_don_hang>Đã giặt xong</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Dùng nước xả hương hoa</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT01" ma_loai_do_su_dung="LD01" ma_dich_vu_su_dung="DV01">
+        <mo_ta_do>Quần áo đi làm và đi chơi</mo_ta_do>
+        <so_luong_kg>5.5</so_luong_kg>
+        <don_gia>25000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>3</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>137500</thanh_tien>
+        <tinh_trang_do>Bình thường</tinh_trang_do>
+        <ghi_chu_dac_biet>Có áo trắng, cần giặt riêng</ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+
+      <GIAO_NHAN ma_giao_nhan="GN001" ma_nhan_vien_giao="NV02">
+        <loai_giao_nhan>Nhận đồ tại nhà</loai_giao_nhan>
+        <dia_chi_giao_hang>123 Đường ABC, Quận Ninh Kiều, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-07T09:30:00</hen_gio_giao>
+        <ten_nguoi_nhan>Nguyễn Thu Trang</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0901234567</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-10-07T09:25:00</thuc_te_giao_do>
+        <phi_giao_nhan>10000</phi_giao_nhan>
+        <tong_so_tien>116875</tong_so_tien>
+        <trang_thai_thanh_toan>Đã thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH002" ma_khach_hang_dat="KH003" ma_nhan_vien_nhan="NV03" ma_khuyen_mai_ap_dung="KM02">
+      <ngay_nhan_don>2025-10-08T14:30:00</ngay_nhan_don>
+      <tong_tien>199500</tong_tien>
+      <trang_thai_don_hang>Đang giao hàng</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Gấp nhanh trong ngày</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT02" ma_loai_do_su_dung="LD02" ma_dich_vu_su_dung="DV02">
+        <mo_ta_do>Chăn mền, rèm cửa</mo_ta_do>
+        <so_luong_kg>7.0</so_luong_kg>
+        <don_gia>30000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>5</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>210000</thanh_tien>
+        <tinh_trang_do>Hơi bẩn nhiều</tinh_trang_do>
+        <ghi_chu_dac_biet>Dùng hóa chất chuyên dụng cho rèm</ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+
+      <GIAO_NHAN ma_giao_nhan="GN002" ma_nhan_vien_giao="NV04">
+        <loai_giao_nhan>Giao đồ tại cửa hàng</loai_giao_nhan>
+        <dia_chi_giao_hang>789 Phố ABC, Quận Ninh Kiều, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-08T18:00:00</hen_gio_giao>
+        <ten_nguoi_nhan>Nguyễn Thị Thu Hương</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0901234567</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-10-08T18:15:00</thuc_te_giao_do>
+        <phi_giao_nhan>0</phi_giao_nhan>
+        <tong_so_tien>199500</tong_so_tien>
+        <trang_thai_thanh_toan>Chưa thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH003" ma_khach_hang_dat="KH002" ma_nhan_vien_nhan="NV01" ma_khuyen_mai_ap_dung="KM03">
+      <ngay_nhan_don>2025-10-09T08:00:00</ngay_nhan_don>
+      <tong_tien>100000</tong_tien>
+      <trang_thai_don_hang>Đã hoàn thành</trang_thai_don_hang>
+      <yeu_cau_dac_biet></yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT03" ma_loai_do_su_dung="LD01" ma_dich_vu_su_dung="DV01">
+        <mo_ta_do>Quần áo hàng ngày</mo_ta_do>
+        <so_luong_kg>4.0</so_luong_kg>
+        <don_gia>25000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>3</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>100000</thanh_tien>
+        <tinh_trang_do>Bình thường</tinh_trang_do>
+        <ghi_chu_dac_biet></ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+
+      <GIAO_NHAN ma_giao_nhan="GN003" ma_nhan_vien_giao="NV02">
+        <loai_giao_nhan>Nhận và giao đồ tại nhà</loai_giao_nhan>
+        <dia_chi_giao_hang>456 Đường XYZ, Quận Bình Thủy, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-09T16:00:00</hen_gio_giao>
+        <ten_nguoi_nhan>Trần Minh Hoàng</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0987654321</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-10-09T16:05:00</thuc_te_giao_do>
+        <phi_giao_nhan>15000</phi_giao_nhan>
+        <tong_so_tien>100000</tong_so_tien>
+        <trang_thai_thanh_toan>Đã thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH004" ma_khach_hang_dat="KH005" ma_nhan_vien_nhan="NV06" ma_khuyen_mai_ap_dung="KM03">
+      <ngay_nhan_don>2025-10-10T11:00:00</ngay_nhan_don>
+      <tong_tien>80000</tong_tien>
+      <trang_thai_don_hang>Đã nhận đơn</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Ủi phẳng kỹ</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT04" ma_loai_do_su_dung="LD03" ma_dich_vu_su_dung="DV03">
+        <mo_ta_do>Vest và áo sơ mi</mo_ta_do>
+        <so_luong_kg>2.5</so_luong_kg>
+        <don_gia>35000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>4</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>87500</thanh_tien>
+        <tinh_trang_do>Cần làm sạch khô</tinh_trang_do>
+        <ghi_chu_dac_biet>Áo vest chỉ giặt hấp</ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+
+      <GIAO_NHAN ma_giao_nhan="GN004" ma_nhan_vien_giao="NV05">
+        <loai_giao_nhan>Nhận đồ tại cửa hàng</loai_giao_nhan>
+        <dia_chi_giao_hang>202 Ngõ QRS, Quận Cái Răng, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-10T19:00:00</hen_gio_giao>
+        <ten_nguoi_nhan>Phạm Thanh Xuân</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0394567890</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-11-07T09:25:00</thuc_te_giao_do>
+        <phi_giao_nhan>0</phi_giao_nhan>
+        <tong_so_tien>80000</tong_so_tien>
+        <trang_thai_thanh_toan>Chưa thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH005" ma_khach_hang_dat="KH007" ma_nhan_vien_nhan="NV07" ma_khuyen_mai_ap_dung="KM01">
+      <ngay_nhan_don>2025-10-11T16:00:00</ngay_nhan_don>
+      <tong_tien>160000</tong_tien>
+      <trang_thai_don_hang>Đang giặt</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Đóng gói cẩn thận</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT05" ma_loai_do_su_dung="LD01" ma_dich_vu_su_dung="DV01">
+        <mo_ta_do>Quần áo trẻ em</mo_ta_do>
+        <so_luong_kg>6.0</so_luong_kg>
+        <don_gia>25000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>3</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>150000</thanh_tien>
+        <tinh_trang_do>Bình thường</tinh_trang_do>
+        <ghi_chu_dac_biet>Dùng nước giặt riêng cho bé</ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+      
+      <GIAO_NHAN ma_giao_nhan="GN005" ma_nhan_vien_giao="NV02">
+        <loai_giao_nhan>Nhận và giao đồ tại nhà</loai_giao_nhan>
+        <dia_chi_giao_hang>505 Phố GHI, Quận Ô Môn, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-12T10:00:00</hen_gio_giao>
+        <ten_nguoi_nhan>Đặng Thị Ngọc Yến</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0912345678</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-10-09T09:25:00</thuc_te_giao_do>
+        <phi_giao_nhan>10000</phi_giao_nhan>
+        <tong_so_tien>160000</tong_so_tien>
+        <trang_thai_thanh_toan>Đã thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH006" ma_khach_hang_dat="KH004" ma_nhan_vien_nhan="NV04" ma_khuyen_mai_ap_dung="KM07">
+      <ngay_nhan_don>2025-10-12T09:15:00</ngay_nhan_don>
+      <tong_tien>50000</tong_tien>
+      <trang_thai_don_hang>Chờ nhận đồ</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Giặt khô một bộ suit</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT06" ma_loai_do_su_dung="LD03" ma_dich_vu_su_dung="DV04">
+        <mo_ta_do>Bộ Suit (áo khoác và quần)</mo_ta_do>
+        <so_luong_kg>2.0</so_luong_kg>
+        <don_gia>50000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>8</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>100000</thanh_tien>
+        <tinh_trang_do>Vết bẩn nhỏ</tinh_trang_do>
+        <ghi_chu_dac_biet>Cần giao đúng hẹn</ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+      
+      <GIAO_NHAN ma_giao_nhan="GN006" ma_nhan_vien_giao="NV03">
+        <loai_giao_nhan>Nhận đồ tại nhà</loai_giao_nhan>
+        <dia_chi_giao_hang>101 Đại lộ MNP, Huyện Phong Điền, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-13T17:30:00</hen_gio_giao>
+        <ten_nguoi_nhan>Lê Văn Tuấn</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0778899001</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-10-17T09:25:00</thuc_te_giao_do>
+        <phi_giao_nhan>10000</phi_giao_nhan>
+        <tong_so_tien>50000</tong_so_tien>
+        <trang_thai_thanh_toan>Chưa thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+    <DON_HANG ma_don_hang="DH007" ma_khach_hang_dat="KH006" ma_nhan_vien_nhan="NV05" ma_khuyen_mai_ap_dung="KM02">
+      <ngay_nhan_don>2025-10-13T12:00:00</ngay_nhan_don>
+      <tong_tien>135000</tong_tien>
+      <trang_thai_don_hang>Đã nhận đồ</trang_thai_don_hang>
+      <yeu_cau_dac_biet>Không dùng thuốc tẩy</yeu_cau_dac_biet>
+      
+      <CHI_TIET_DON_HANG ma_chi_tiet="CT07" ma_loai_do_su_dung="LD02" ma_dich_vu_su_dung="DV02">
+        <mo_ta_do>Thảm và thú nhồi bông lớn</mo_ta_do>
+        <so_luong_kg>5.0</so_luong_kg>
+        <don_gia>30000</don_gia>
+        <so_gio_uoc_tinh_giat_xong>6</so_gio_uoc_tinh_giat_xong>
+        <thanh_tien>150000</thanh_tien>
+        <tinh_trang_do>Bình thường</tinh_trang_do>
+        <ghi_chu_dac_biet></ghi_chu_dac_biet>
+      </CHI_TIET_DON_HANG>
+      
+      <GIAO_NHAN ma_giao_nhan="GN007" ma_nhan_vien_giao="NV06">
+        <loai_giao_nhan>Giao đồ tại cửa hàng</loai_giao_nhan>
+        <dia_chi_giao_hang>303 Đường DEF, Huyện Thốt Nốt, Cần Thơ</dia_chi_giao_hang>
+        <hen_gio_giao>2025-10-14T11:00:00</hen_gio_giao>
+        <ten_nguoi_nhan>Võ Minh Đức</ten_nguoi_nhan>
+        <sdt_nguoi_nhan>0868112233</sdt_nguoi_nhan>
+        <thuc_te_giao_do>2025-12-07T09:25:00</thuc_te_giao_do>
+        <phi_giao_nhan>0</phi_giao_nhan>
+        <tong_so_tien>135000</tong_so_tien>
+        <trang_thai_thanh_toan>Chưa thanh toán</trang_thai_thanh_toan>
+      </GIAO_NHAN>
+    </DON_HANG>
+  </DanhSachDonHang>
+
+</QuanLyTiemGiatUi>
