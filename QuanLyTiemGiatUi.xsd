@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:element name="QuanLyTiemGiatUi">
+    <xs:complexType>
+      <xs:sequence>
+
+        <!-- ===== 1. Danh sách khách hàng ===== -->
+        <xs:element name="DanhSachKhachHang">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KHACH_HANG" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ho_ten" type="xs:string"/>
+                    <xs:element name="so_dien_thoai" type="xs:string"/>
+                    <xs:element name="email" type="xs:string"/>
+                    <xs:element name="dia_chi" type="xs:string"/>
+                    <xs:element name="ghi_chu" type="xs:string"/>
+                  </xs:sequence>
+                  <xs:attribute name="ma_khach_hang" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- ===== 2. Danh sách nhân viên ===== -->
+        <xs:element name="DanhSachNhanVien">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NHAN_VIEN" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ho_ten" type="xs:string"/>
+                    <xs:element name="so_dien_thoai" type="xs:string"/>
+                    <xs:element name="email" type="xs:string"/>
+                    <xs:element name="dia_chi" type="xs:string"/>
+                    <xs:element name="luong" type="xs:decimal"/>
+                    <xs:element name="ngay_vao_lam" type="xs:date"/>
+                    <xs:element name="vi_tri" type="xs:string"/>
+                  </xs:sequence>
+                  <xs:attribute name="ma_nhan_vien" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- ===== 3. Danh sách khuyến mãi ===== -->
+        <xs:element name="DanhSachKhuyenMai">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KHUYEN_MAI" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="mo_ta_khuyen_mai" type="xs:string"/>
+                    <xs:element name="so_tien_giam" type="xs:decimal"/>
+                    <xs:element name="tien_don_hang_toi_thieu" type="xs:decimal"/>
+                    <xs:element name="ngay_bat_dau" type="xs:date"/>
+                    <xs:element name="ngay_ket_thuc" type="xs:date"/>
+                  </xs:sequence>
+                  <xs:attribute name="ma_khuyen_mai" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- ===== 4. Danh sách loại đồ ===== -->
+        <xs:element name="DanhSachLoaiDo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOAI_DO" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ten_loai_do" type="xs:string"/>
+                    <xs:element name="mo_ta_loai_do" type="xs:string"/>
+                    <xs:element name="he_so_gia" type="xs:decimal"/>
+                  </xs:sequence>
+                  <xs:attribute name="ma_loai_do" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- ===== 5. Danh sách dịch vụ ===== -->
+        <xs:element name="DanhSachDichVu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DICH_VU" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ten_dich_vu" type="xs:string"/>
+                    <xs:element name="mo_ta_dich_vu" type="xs:string"/>
+                    <xs:element name="gia_dich_vu" type="xs:decimal"/>
+                  </xs:sequence>
+                  <xs:attribute name="ma_dich_vu" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- ===== 6. Danh sách đơn hàng ===== -->
+        <xs:element name="DanhSachDonHang">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DON_HANG" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ngay_nhan_don" type="xs:dateTime"/>
+                    <xs:element name="tong_tien" type="xs:decimal"/>
+                    <xs:element name="trang_thai_don_hang" type="xs:string"/>
+                    <xs:element name="yeu_cau_dac_biet" type="xs:string" minOccurs="0"/>
+
+                    <!-- Chi tiết đơn hàng -->
+                    <xs:element name="CHI_TIET_DON_HANG">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="mo_ta_do" type="xs:string"/>
+                          <xs:element name="so_luong_kg" type="xs:decimal"/>
+                          <xs:element name="don_gia" type="xs:decimal"/>
+                          <xs:element name="so_gio_uoc_tinh_giat_xong" type="xs:decimal"/>
+                          <xs:element name="thanh_tien" type="xs:decimal"/>
+                          <xs:element name="tinh_trang_do" type="xs:string"/>
+                          <xs:element name="ghi_chu_dac_biet" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="ma_chi_tiet" type="xs:string" use="required"/>
+                        <xs:attribute name="ma_loai_do_su_dung" type="xs:string" use="required"/>
+                        <xs:attribute name="ma_dich_vu_su_dung" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+
+                    <!-- Giao nhận -->
+                    <xs:element name="GIAO_NHAN">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="loai_giao_nhan" type="xs:string"/>
+                          <xs:element name="dia_chi_giao_hang" type="xs:string"/>
+                          <xs:element name="hen_gio_giao" type="xs:dateTime"/>
+                          <xs:element name="ten_nguoi_nhan" type="xs:string"/>
+                          <xs:element name="sdt_nguoi_nhan" type="xs:string"/>
+                          <xs:element name="thuc_te_giao_do" type="xs:dateTime"/>
+                          <xs:element name="phi_giao_nhan" type="xs:decimal"/>
+                          <xs:element name="tong_so_tien" type="xs:decimal"/>
+                          <xs:element name="trang_thai_thanh_toan" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="ma_giao_nhan" type="xs:string" use="required"/>
+                        <xs:attribute name="ma_nhan_vien_giao" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+
+                  </xs:sequence>
+                  <xs:attribute name="ma_don_hang" type="xs:string" use="required"/>
+                  <xs:attribute name="ma_khach_hang_dat" type="xs:string" use="required"/>
+                  <xs:attribute name="ma_nhan_vien_nhan" type="xs:string" use="required"/>
+                  <xs:attribute name="ma_khuyen_mai_ap_dung" type="xs:string" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
